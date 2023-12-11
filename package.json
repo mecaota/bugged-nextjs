@@ -7,12 +7,23 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "7.6.4",
+    "@storybook/addon-essentials": "7.6.4",
+    "@storybook/addon-interactions": "7.6.4",
+    "@storybook/addon-links": "7.6.4",
+    "@storybook/addon-mdx-gfm": "7.6.4",
+    "@storybook/blocks": "7.6.4",
+    "@storybook/nextjs": "7.6.4",
+    "@storybook/react": "7.6.4",
+    "@storybook/test": "7.6.4",
     "@types/node": "20.10.4",
     "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",
     "eslint": "8.55.0",
     "eslint-config-next": "14.0.4",
+    "eslint-plugin-storybook": "0.6.15",
     "prettier": "3.1.0",
+    "storybook": "7.6.4",
     "typescript": "5.3.3"
   },
   "engines": {
@@ -22,10 +33,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "build-storybook": "storybook build",
     "dev": "next dev",
     "format": "prettier --ignore-unknown --no-error-on-unmatched-pattern --write .",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "storybook dev -p 6006"
   },
   "type": "module"
 }
