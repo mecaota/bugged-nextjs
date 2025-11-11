@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import { HogeButton } from '@/components/HogeButton';
+import { RouterButton } from '@/components/RouterButton';
 
 type Params = {
   pokemon: string;
@@ -41,6 +43,8 @@ const PokemonDetailPage = async (props: Props) => {
         <dt>{pokemon.id}</dt>
         <dd>{pokemon.name}</dd>
       </dl>
+      <HogeButton />
+      <RouterButton />
     </div>
   );
 };
