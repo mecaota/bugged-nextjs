@@ -3,5 +3,9 @@ import type { FC } from 'react';
 
 export const RouterButton: FC = () => {
   const router = useRouter();
-  return <button onClick={() => router.push('/pokemons')}>HOGE</button>;
+  return (
+    <button onClick={() => router.push('/pokemons')} type="button">
+      HOGE
+    </button>
+  );
 };

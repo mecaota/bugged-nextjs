@@ -1,5 +1,5 @@
 import type { FC } from 'react';
 
 export const HogeButton: FC = () => {
-  return <button>HOGE</button>;
+  return <button type="button">HOGE</button>;
 };

@@ -1,10 +1,6 @@
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../src/app/**/layout.stories.@(js|jsx|ts|tsx)',
-  ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -12,6 +8,9 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-mdx-gfm',
   ],
+  docs: {
+    autodocs: 'tag',
+  },
   framework: {
     name: '@storybook/nextjs',
     options: {
@@ -20,8 +19,9 @@ const config: StorybookConfig = {
       },
     },
   },
-  docs: {
-    autodocs: 'tag',
-  },
+  stories: [
+    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../src/app/**/layout.stories.@(js|jsx|ts|tsx)',
+  ],
 };
 export default config;

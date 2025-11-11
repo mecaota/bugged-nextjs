@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { HogeButton } from '.';
+
 type Story = StoryObj<typeof HogeButton>;
 
 export default {

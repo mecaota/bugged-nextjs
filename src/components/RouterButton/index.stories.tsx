@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { RouterButton } from '.';
+
 type Story = StoryObj<typeof RouterButton>;
 
 export default {

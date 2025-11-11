@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export const revalidate = 1800;
-
 type Pokemon = {
   name: string;
   url: string;
@@ -35,8 +33,8 @@ const PokemonListPage = async () => {
     <div>
       <h1>Pokemon List</h1>
       <ul>
-        {pokemons.map((pokemon, index) => (
-          <li key={index}>
+        {pokemons.map((pokemon) => (
+          <li key={pokemon.name}>
             <Link href={`/pokemons/${pokemon.name}`}>{pokemon.name}</Link>
           </li>
         ))}
@@ -46,3 +44,5 @@ const PokemonListPage = async () => {
 };
 
 export default PokemonListPage;
+
+export const revalidate = 1800;

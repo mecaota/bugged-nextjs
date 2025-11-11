@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation';
 
-export const revalidate = 1800;
-
 type Params = {
   pokemon: string;
 };
@@ -48,3 +46,5 @@ const PokemonDetailPage = async (props: Props) => {
 };
 
 export default PokemonDetailPage;
+
+export const revalidate = 1800;
