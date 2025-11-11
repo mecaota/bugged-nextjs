@@ -26,8 +26,8 @@
     "build": "next build",
     "build-storybook": "storybook build",
     "dev": "next dev",
-    "format": "prettier --ignore-unknown --no-error-on-unmatched-pattern --write .",
-    "lint": "next lint",
+    "format": "bun biome check --write --unsafe .",
+    "lint": "bun biome check .",
     "start": "next start",
     "storybook": "storybook dev -p 6006"
   },
