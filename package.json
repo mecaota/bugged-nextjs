@@ -1,44 +1,36 @@
 {
-  "name": "bugged-nextjs",
-  "version": "0.1.0",
-  "dependencies": {
-    "next": "14.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@storybook/addon-a11y": "7.6.4",
-    "@storybook/addon-essentials": "7.6.4",
-    "@storybook/addon-interactions": "7.6.4",
-    "@storybook/addon-links": "7.6.4",
-    "@storybook/addon-mdx-gfm": "7.6.4",
-    "@storybook/blocks": "7.6.4",
-    "@storybook/nextjs": "7.6.4",
-    "@storybook/react": "7.6.4",
-    "@storybook/test": "7.6.4",
-    "@types/node": "20.10.4",
-    "@types/react": "18.2.43",
-    "@types/react-dom": "18.2.17",
-    "eslint": "8.55.0",
-    "eslint-config-next": "14.0.4",
-    "eslint-plugin-storybook": "0.6.15",
-    "prettier": "3.1.1",
-    "storybook": "7.6.4",
-    "typescript": "5.3.3"
-  },
-  "engines": {
-    "node": "22.13.1"
-  },
-  "packageManager": "bun@1.1.43",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "build-storybook": "storybook build",
-    "dev": "next dev",
-    "format": "prettier --ignore-unknown --no-error-on-unmatched-pattern --write .",
-    "lint": "next lint",
-    "start": "next start",
-    "storybook": "storybook dev -p 6006"
-  },
-  "type": "module"
+	"name": "bugged-nextjs",
+	"version": "0.1.0",
+	"dependencies": {
+		"next": "16.0.1",
+		"react": "19.2.0",
+		"react-dom": "19.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.4",
+		"@storybook/addon-a11y": "10.0.6",
+		"@storybook/addon-links": "10.0.6",
+		"@storybook/nextjs": "10.0.6",
+		"@storybook/react": "10.0.6",
+		"@types/node": "24.10.0",
+		"@types/react": "19.2.2",
+		"@types/react-dom": "19.2.2",
+		"storybook": "10.0.6",
+		"typescript": "5.9.3"
+	},
+	"engines": {
+		"node": "22.21.1"
+	},
+	"packageManager": "bun@1.3.2",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"build-storybook": "storybook build",
+		"dev": "next dev",
+		"format": "prettier --ignore-unknown --no-error-on-unmatched-pattern --write .",
+		"lint": "next lint",
+		"start": "next start",
+		"storybook": "storybook dev -p 6006"
+	},
+	"type": "module"
 }
