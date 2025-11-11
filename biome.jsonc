@@ -1,0 +1,220 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.4/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "useSortedAttributes": "on",
+        "useSortedKeys": "on",
+        "useSortedProperties": "on"
+      }
+    },
+    "enabled": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**", "!public/**/*.js"]
+  },
+  "formatter": {
+    "formatWithErrors": true,
+    "indentStyle": "space"
+  },
+  "html": { "formatter": { "selfCloseVoidElements": "always" } },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "linter": {
+    "domains": {
+      "next": "all",
+      "project": "all",
+      "react": "all",
+      "test": "all"
+    },
+    "rules": {
+      "a11y": {
+        "noNoninteractiveElementInteractions": "on",
+        "useMediaCaption": "off"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "on",
+        "noExcessiveLinesPerFunction": "off", // 関数内の行数制限はテストコードとかオブジェクト代入系のコードでもエラーでて面倒なのでoff
+        "noExcessiveNestedTestSuites": "on",
+        "noForEach": "off", // 理屈はわかるがforEachは楽なので一旦許可
+        "noImplicitCoercions": "off", // キャスト短縮するくらいええやんけ
+        "noUselessStringConcat": "on",
+        "noVoid": "on",
+        "useSimplifiedLogicExpression": "on",
+        "useWhile": "on"
+      },
+      "correctness": {
+        "noGlobalDirnameFilename": "on",
+        "noNestedComponentDefinitions": "on",
+        "noNodejsModules": "off", // Node.jsモジュールは普通に使うのでoff
+        "noReactPropAssignments": "on",
+        "noRenderReturnValue": "on",
+        "noRestrictedElements": "off", // 今のところ使わない
+        "noUndeclaredDependencies": "off", // モノレポでは誤検知するのでoff
+        "noUndeclaredVariables": {
+          "level": "error",
+          "options": {
+            "checkTypes": true
+          }
+        },
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "error",
+          "options": {}
+        },
+        "useImportExtensions": "off", // import時の拡張子は消したい
+        "useSingleJsDocAsterisk": "on"
+      },
+      "performance": {
+        "noAwaitInLoops": "on",
+        "noBarrelFile": "on",
+        "noDelete": "on",
+        "noNamespaceImport": "off", // TODO:後でonにして直す
+        "noReExportAll": "on",
+        "useTopLevelRegex": "off" // TODO:後でonにして直す
+      },
+      "recommended": true,
+      "style": {
+        "noCommonJs": "on",
+        "noDefaultExport": "on",
+        "noDoneCallback": "on",
+        "noEnum": "on",
+        "noExportedImports": "on",
+        "noImplicitBoolean": "off", // 使いたいので
+        "noInferrableTypes": "off", // そこまで気にしないのでoff
+        "noMagicNumbers": "off", // TODO:後でonにして直す
+        "noNamespace": "on",
+        "noNegationElse": "on",
+        "noNestedTernary": "on",
+        "noParameterAssign": "on",
+        "noParameterProperties": "on",
+        "noProcessEnv": "off", // 使うのでoff
+        "noRestrictedImports": {
+          // FSD: 公開API以外からのimportを禁止
+          "level": "warn",
+          "options": {
+            "patterns": [
+              {
+                "group": ["@/{pages,widgets,features,entities}/*/**"],
+                "message": "appとshared以外のレイヤーでは公開API以外からのimportは禁止です"
+              }
+            ]
+          }
+        },
+        "noSubstr": "on",
+        "noUnusedTemplateLiteral": "on",
+        "noUselessElse": "on",
+        "noValueAtRule": "on",
+        "noYodaExpression": "off", // 比較演算子の順序すら直しちゃうのでNG
+        "useAsConstAssertion": "on",
+        "useAtIndex": "off", // 必要性を感じないのでoff
+        "useBlockStatements": "on",
+        "useCollapsedElseIf": "on",
+        "useCollapsedIf": "on",
+        "useComponentExportOnlyModules": "off", // 必要性を感じないのでoff
+        "useConsistentArrayType": "on",
+        "useConsistentBuiltinInstantiation": "on",
+        "useConsistentCurlyBraces": "on",
+        "useConsistentMemberAccessibility": "off", // 明示すべきなのでoff
+        "useConsistentObjectDefinitions": "on",
+        "useConst": "on",
+        "useDefaultParameterLast": "on",
+        "useDefaultSwitchClause": "on",
+        "useEnumInitializers": "on",
+        "useExplicitLengthCheck": "off", // 必要性を感じないのでoff(>での記法に書き換えてしまうのも気に入らないので)
+        "useExportsLast": "on",
+        "useFilenamingConvention": "off", // TODO:ファイル名のルール規則を別途定めて有効化
+        "useForOf": "on",
+        "useFragmentSyntax": "on",
+        "useGroupedAccessorPairs": "on",
+        "useNamingConvention": "off", // TODO:命名規則を別途定めて有効化
+        "useNodeAssertStrict": "on",
+        "useNumberNamespace": "off", // 必要性を感じないのでoff
+        "useNumericSeparators": "off", // 必要性を感じないのでoff
+        "useObjectSpread": "on",
+        "useReadonlyClassProperties": "on",
+        "useSelfClosingElements": "on",
+        "useShorthandAssign": "on",
+        "useSingleVarDeclarator": "on",
+        "useSymbolDescription": "on",
+        "useThrowNewError": "on",
+        "useThrowOnlyError": "on",
+        "useTrimStartEnd": "on",
+        "useUnifiedTypeSignatures": "on"
+      },
+      "suspicious": {
+        "noAlert": "off",
+        "noBitwiseOperators": "on",
+        "noConstantBinaryExpressions": "on",
+        "noDocumentCookie": "off",
+        "noEmptyBlockStatements": "off", // 意図的に空にすることもあるのでoff
+        "noEvolvingTypes": "on",
+        "noMisplacedAssertion": "on",
+        "noSkippedTests": "on",
+        "noUnassignedVariables": "on",
+        "noVar": "on",
+        "useAwait": "off",
+        "useErrorMessage": "on",
+        "useGuardForIn": "on",
+        "useNumberToFixedDigitsArgument": "on",
+        "useStrictMode": "on"
+      }
+    }
+  },
+  "overrides": [
+    {
+      // Next.jsのページ、Storybook、設定ファイル、Storyファイルではdefault exportを許可
+      "includes": [
+        "**/{page,layout,route,default,not-found,error,sitemap}.{js,ts,jsx,tsx}",
+        "**/.storybook/{preview,main}.{js,ts,jsx,tsx}",
+        "**/*.config.{js,ts}",
+        "**/*.stories.{js,ts,jsx,tsx}"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      // FSD: Layerの公開APIはバレルexportを許可
+      "includes": [
+        "**/{app,pages,widgets,features,entities,shared}/*/index.{ts,tsx}"
+      ],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noBarrelFile": "off"
+          }
+        }
+      }
+    },
+    {
+      // packageのentrypointはバレルexportを許可
+      "includes": ["packages/*/src/index.{ts,tsx}"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noBarrelFile": "off"
+          }
+        }
+      }
+    },
+    {
+      // テストコードでは多少ルールを緩和
+      "includes": ["**/*.spec.ts", "**/*.spec.tsx"],
+      "linter": {
+        "rules": {
+          "style": { "noMagicNumbers": "off" }
+        }
+      }
+    }
+  ],
+  "vcs": { "clientKind": "git", "enabled": true, "useIgnoreFile": true }
+}
